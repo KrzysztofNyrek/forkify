@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Forkify, app that help you find the best recipe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrzysztofNyrek/forkify.git"
+  },
+  "author": "Krzysztof Nyrek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrzysztofNyrek/forkify/issues"
+  },
+  "homepage": "https://github.com/KrzysztofNyrek/forkify#readme",
+  "devDependencies": {
+    "webpack": "^4.41.6"
+  },
+  "dependencies": {}
+}
