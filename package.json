@@ -4,7 +4,9 @@
   "description": "Forkify, app that help you find the best recipe",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,16 @@
   },
   "homepage": "https://github.com/KrzysztofNyrek/forkify#readme",
   "devDependencies": {
-    "webpack": "^4.41.6"
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "regenerator-runtime": "^0.13.3"
+  }
 }
