@@ -14,7 +14,6 @@ const state = {};
 const controlSearch = async () => {
   // Get query from view
   const query = searchView.getInput();
-  console.log(searchView);
   
   if (query){
     //New search object and add to stage
@@ -26,6 +25,7 @@ const controlSearch = async () => {
 
     //Render result on UI
     console.log(state.search.result);
+    searchView.renderResult(state.search.result);
   }
 };
 
