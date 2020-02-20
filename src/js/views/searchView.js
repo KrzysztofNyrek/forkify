@@ -1,6 +1,8 @@
 import { elements } from './base';
 export const getInput = () => elements.searchInput.value;
-
+export const clearInput = () => {
+    elements.searchInput.value = '';
+};
 const renderRecipe = recipe => {
   const markup = `
       <li>
@@ -19,4 +21,4 @@ const renderRecipe = recipe => {
 };
 export const renderResult = recipes => {
   recipes.forEach(renderRecipe);
-}
+};
