@@ -5,6 +5,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 import Recipe from './modules/Recipe';
 import List from './modules/List';
 import * as recipeView from './views/recipeView';
+import * as listView from './views/listView';
 
 /* Global state of the app
  *  - Search object
@@ -90,6 +91,19 @@ const controlRecipe = async () => {
 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
+/**
+ * LIST CONTROLLER
+ */
+const controlList =() => {
+  // Create a new list if there is none yet
+  if (!state.list) state.list = new List();
+
+  //Add each ingredients to the list and UI
+  state.recipe.ingredients.forEach(el => {
+    const item = state.list.addItem(el.count, el.unit, el.ingredient);
+    listView.renderItem(item);
+  });
+}
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e =>{
   if(e.target.matches('.btn-decrease, .btn-decrease *')){
@@ -102,6 +116,8 @@ elements.recipe.addEventListener('click', e =>{
     //Increase button is clicked
     state.recipe.updateServings('inc');
     recipeView.updateServingsIngredients(state.recipe);
+  } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')){
+    controlList();
   }
 });
 
