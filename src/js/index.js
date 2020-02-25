@@ -3,6 +3,7 @@ import Search from './modules/Search';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Recipe from './modules/Recipe';
+import List from './modules/List';
 import * as recipeView from './views/recipeView';
 
 /* Global state of the app
@@ -102,4 +103,6 @@ elements.recipe.addEventListener('click', e =>{
     state.recipe.updateServings('inc');
     recipeView.updateServingsIngredients(state.recipe);
   }
-})
+});
+
+window.l = new List();
